@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual_Type</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <style>
+        
+        .input_text{
+            width: 50%;
+            height: 100px;
+            margin-top: 4%;
+            margin-bottom: 2%;
+        }
+        .bgimg{
+           background-image: url({% static '/Images/bgimg.png' %});
+           background-size: cover;
+              }
+
+    </style>
+</head>
+<body class="bgimg">
+{% include 'header.html' %}
+<center>
+<form action={% url 'manual_process' %} method="post">
+    {% csrf_token %}
+        <input type="text" class="input_text" name="manual_type" autofocus required placeholder="I am very happy...today.">
+        <br>
+    <a href="result.html"> <button>Process</button></a>
+</form>
+</center>
+<hr>
+<div id="manual">
+    <h5>Manual Data</h5>
+    <p>Here you enter text that is depressed or not And model give the prediction</p>
+</div>
+{% include 'footer.html' %}
+</body>
+</html>

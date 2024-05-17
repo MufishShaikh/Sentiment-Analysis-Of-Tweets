@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+<title>Result</title>
+<style>
+ul {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ background-color: black;
+}
+
+
+li a:hover {
+ background-color: #111;
+}
+
+.bgimg{
+   background-image: url({% static '/Images/bgimg.png' %});
+   background-size: cover;
+}
+
+td{
+    background-color: #c2c2c2;
+    border-color: black;
+    height: 40%;
+    width: 30%;
+}
+
+img{
+    height: 300px;
+    width: 300px;
+}
+</style>
+</head>
+<body  class="bgimg">
+  {% include 'header.html' %}
+  <div><center><h2 style="font-family:LemonMilk">Showing Result</h2></center></div>
+
+  <br>
+  <br>
+  <br>
+
+  <center>
+
+      <img src="{% static 'pie_chart.png' %}" style="padding-right:60px">
+      <img src="{% static 'bar_chart.png' %}">
+
+  <br>
+  <br>
+  <br>
+  <a class="active" href="{% url 'home' %}"><button>Back to Home</button></a>
+
+  <center><h2 style="font-family:LemonMilk">Recent Tweets..</h2></center>
+  <table border="0">
+      <tr>
+          <td><div class="tweet1"> {%autoescape off %}{{ ex }}{% endautoescape %}</div><br></td>
+{#          <td><div class="tweet1"> {%autoescape off %}{{ pr }}{% endautoescape %}</div><br></td>#}
+          <td><div class="tweet1"> {%autoescape off %}{{ ex1 }}{% endautoescape %}</div><br></td>
+{#          <td><div class="tweet1"> {%autoescape off %}{{ pr1 }}{% endautoescape %}</div><br></td>#}
+          <td><div class="tweet1"> {%autoescape off %}{{ ex2 }}{% endautoescape %}</div><br></td>
+{#          <td><div class="tweet1"> {%autoescape off %}{{ pr2 }}{% endautoescape %}</div><br></td>#}
+      </tr>
+  </table>
+  <p style="margin-bottom: 10%;"></p>
+   </center>
+{% include 'footer.html' %}
+</body>
+</html>

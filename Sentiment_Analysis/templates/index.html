@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <style>
+        .bgimg{
+           background-image: url({% static '/Images/bgimg.png' %});
+           background-size: cover;
+              }
+    </style>
+</head>
+<body class="bgimg">
+{% include 'header.html' %}
+    <div id="buttons">
+      <center>
+        <a href="{% url 'manual' %}"><button>Give Sentence</button></a>
+        <a href="{% url 'twitter' %}"><button>Fetch From Twitter</button></a>
+          <br><br>
+          <hr>
+          <br>
+          <p>
+              hola<big>!</big> Welcome to our website here you can enter ur tweets & we'll do Sentiment Analysis of it .
+          </p></center>
+          <p>
+          <ul style="margin:1% 10%; padding: 2%;">
+        <center><strong>Sentiment Analysis of Tweets using Baye's Theorem.</strong><br></center><br>
+                <tab>Depression is a mental illness that is not taken seriously in some countries.Social media platforms are becoming an integral part of people’s life.
+        They reflect user’s personal life. People likes to share happiness, joy and sadness on social media.
+        These platforms are used for researchers to identify the causes of depression and detect it.<br><br>
+        <strong>All forms of depressive disorder experience some of the following symptoms:</strong><br>
+          <li>(a) reduced concentration and attention</li>
+          <li>(b) reduced self-esteem and self-confidence</li>
+          <li>(c) ideas of guilt and unworthiness (even in a mild type of episode)</li>
+          <li>(d) bleak and pessimistic views of the future</li>
+          <li>(e) ideas or acts of self-harm or suicide</li>
+          <li>(f) disturbed sleep</li>
+          <li>(g) diminished appetite</li>
+          </ul>
+          </p>
+      </div>
+
+{% include 'footer.html' %}
+</body>
+</html>
